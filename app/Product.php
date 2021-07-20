@@ -10,4 +10,9 @@ class Product extends Model
     {
         return $this->belongsTo(Store::class);
     }
+
+    public function Categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }
