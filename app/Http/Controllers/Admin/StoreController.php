@@ -45,4 +45,12 @@ class StoreController extends Controller
 
         return $store;
     }
+
+    public function destroy($storeID)
+    {
+        $store = Store::find($storeID);
+        $store->delete();
+
+        return redirect('/admin/stores');
+    }
 }
