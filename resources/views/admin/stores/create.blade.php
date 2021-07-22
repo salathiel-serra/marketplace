@@ -39,7 +39,7 @@
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-success btn-large">Enviar</button>
+      <button type="submit" class="btn btn-success btn-large">Criar loja</button>
     </div>
   </form>
 @endsection
