@@ -4,6 +4,8 @@
   <h1> Atualizar produto </h1>
   <form action="{{route('admin.products.update', ['product'=>$product->id] )}}" method="post">
     <input type="hidden" name="_token" value="{{csrf_token()}}">
+    <input type="hidden" name="_method" value="PUT">
+
     <div class="form-group">
       <label for="">Nome produto</label>
       <input type="text" name="name" class="form-control" value="{{$product->name}}">
