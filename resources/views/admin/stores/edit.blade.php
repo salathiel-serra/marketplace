@@ -2,8 +2,10 @@
 
 @section('content')
   <h1>Criar loja</h1>
-  <form action="{{route('admin.stores.update', ['storeID'=>$store->id] )}}" method="post">
-    <input type="hidden" name="_token" value="{{csrf_token()}}">
+  <form action="{{route('admin.stores.update', ['store'=>$store->id] )}}" method="post">
+    @csrf
+    @method('PUT')
+    
     <div class="form-group">
       <label for="">Nome loja</label>
       <input type="text" name="name" class="form-control" value="{{$store->name}}">

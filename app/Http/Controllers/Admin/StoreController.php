@@ -31,26 +31,26 @@ class StoreController extends Controller
         return redirect()->route('admin.stores.index');
     }
 
-    public function edit($storeID)
+    public function edit($store)
     {
-        $store = Store::find($storeID);
+        $store = Store::find($store);
         return view('admin.stores.edit', compact('store'));
     }
 
-    public function update(Request $request, $storeID)
+    public function update(Request $request, $store)
     {
         $data = $request->all();
 
-        $store = Store::find($storeID);
+        $store = Store::find($store);
         $store->update($data);
 
         flash('Loja atualizada com sucesso!')->success();
         return redirect()->route('admin.stores.index');
     }
 
-    public function destroy($storeID)
+    public function destroy($store)
     {
-        $store = Store::find($storeID);
+        $store = Store::find($store);
         $store->delete();
 
         flash('Loja removida com sucesso!')->success();
