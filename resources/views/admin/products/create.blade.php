@@ -45,11 +45,6 @@
     </div>
 
     <div class="form-group">
-      <label for="">Slug</label>
-      <input type="text" name="slug" class="form-control">
-    </div>
-
-    <div class="form-group">
       <label for="">Categorias</label>
       <select name="categories[]" id="" class="form-control" multiple>
         @foreach($categories as $category)
