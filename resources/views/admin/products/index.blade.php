@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <a href="{{route('admin.products.create')}}" class="btn btn-large btn-success"> Criar produto </a>
+  @if(auth()->user()->store)
+    <a href="{{route('admin.products.create')}}" class="btn btn-large btn-success"> Criar produto </a>
+  @endif
   <table class="table table-striped">
     <thead>
       <tr>
@@ -13,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($products as $product)
+      @forelse($products as $product)
         <tr>
           <td> {{$product->id}} </td>
           <td> {{$product->name}} </td>
@@ -30,9 +32,12 @@
             </div>
           </td>
         </tr>
-      @endforeach
+      @empty
+      
+      @endforelse
     </tbody>
   </table>
-
+  @if(!empty($products))
   {{ $products->links() }}
+  @endif
 @endsection

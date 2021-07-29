@@ -26,7 +26,12 @@ class ProductController extends Controller
     public function index()
     {
         $userStore = auth()->user()->store;
-        $products = $userStore->products()->paginate(10);
+        
+        $products = [];
+        if(isset($userStore->products)) { 
+            $products = $userStore->products()->paginate(10);
+        }
+
         return view('admin.products.index', compact('products'));
     }
 
