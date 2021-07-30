@@ -12,9 +12,15 @@
           @endif
           <div class="card-body">
             <h2 class="cart-title"> {{$product->name}} </h2>
+
             <p class="card-text"> 
               {{$product->description}} 
             </p>
+
+            <h3> 
+              R$ {{number_format($product->price, '2', ',','.')}} 
+            </h3>
+            
             <a href="{{route('product.single', ['slug' => $product->slug])}}" class="btn btn-success">
               Ver produto
             </a>
