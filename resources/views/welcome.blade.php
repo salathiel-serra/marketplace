@@ -12,7 +12,12 @@
           @endif
           <div class="card-body">
             <h2 class="cart-title"> {{$product->name}} </h2>
-            <p class="card-text"> {{$product->description}} </p>
+            <p class="card-text"> 
+              {{$product->description}} 
+            </p>
+            <a href="{{route('product.single', ['slug' => $product->slug])}}" class="btn btn-success">
+              Ver produto
+            </a>
           </div>
         </div>
       </div>
