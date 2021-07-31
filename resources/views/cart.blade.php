@@ -41,6 +41,13 @@
             </tr>
           </tbody>
         </table>
+
+        <hr>
+
+        <div class="col-md-12">
+        <a href="#" class="btn btn-lg btn-success float-right"> Finalizar compra </a>
+          <a href="{{route('cart.cancel')}}" class="btn btn-lg btn-danger float-left"> Cancelar compra </a>
+        </div>
       @else
         <div class="alert alert-warning"> Carrinho vazio... </div>
       @endif
