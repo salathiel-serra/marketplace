@@ -11,6 +11,8 @@ class CheckoutController extends Controller
         if(!auth()->check()) {
             return redirect()->route('login');
         }
-        dd("checkout");
+
+        // dd("checkout");
+        return view('checkout');
     }
 }
